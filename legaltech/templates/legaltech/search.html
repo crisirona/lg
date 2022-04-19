@@ -1,0 +1,41 @@
+{% extends 'legaltech/base.html' %}
+
+{% block content %}
+<div class="container d-flex justify-content-center mt-4">
+  
+    <div class="container">
+        <h2>Busca casos</h2>
+        <form method="GET">
+            <div class="input-group">
+                <input type="text" class="form-control" name="buscar" value="{{request.GET.buscar}}" >
+                <button type="submit" class='btn' >Buscar</button>
+            </div>
+        </form>
+        
+        
+    
+        
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Id</th>
+                <th scope="col">Accion</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+                {% for c in caso %}
+              <tr>
+                <th scope="row">-</th>
+                <td>{{c.id_caso}}</td>
+                <td><a href="{% url 'modificar' c.id_caso%}" class="btn btn-warning">Editar</a>
+                    <a href="{% url 'eliminarconf' c.id_caso %}" class="btn btn-danger">Eliminar</a></td>
+               </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        
+    </div>
+</div>
+{% endblock %}

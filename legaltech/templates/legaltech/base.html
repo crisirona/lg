@@ -24,7 +24,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-       
+        {% if user.is_authenticated %}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Casos
@@ -39,12 +39,12 @@
             Demandas
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Modificar</a></li>
-            <li><a class="dropdown-item" href="#">Buscar</a></li>
-            <li><a class="dropdown-item" href="#">Eliminar</a></li>
+            <li><a class="dropdown-item" href="{% url 'listacasosaction' %}">Modificar</a></li>
+            <li><a class="dropdown-item" href="{% url 'search' %}">Buscar</a></li>
+            <li><a class="dropdown-item" href="{% url 'listacasosaction' %}">Eliminar</a></li>
           </ul>
         </li>
-
+        {% endif %}
           {% if user.is_authenticated %}
            
            <li class="nav-item">

@@ -7,8 +7,8 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">ID Caso</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Accion</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     {% for c in casos %}
@@ -16,8 +16,8 @@
       <tr>
         <th scope="row">1</th>
         <td>{{c.id_caso}}</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <td><a href="{% url 'modificar' c.id_caso%}" class="btn btn-warning">Editar</a></td>
+        <td><a href="{% url 'eliminarconf' c.id_caso %}" class="btn btn-danger">Eliminar</a></td>
       </tr>
     </tbody>
     {% endfor %}

@@ -1,0 +1,158 @@
+{% extends 'legaltech/base.html' %}
+
+{% block content %}
+<div class="container">
+  {% comment %} <form method="post">
+    {% csrf_token %}
+  <div class="col">
+    <div class="row">
+      <div class="mb-3">
+        <label for="id_demanda" class="form-label">ID Demanda</label>
+        {{form.id_demanda}}
+      </div>
+      <div class="mb-3">
+        <label for="fecha" class="form-label">Fecha</label>
+        {{form.fecha}}
+      </div>
+      <div class="mb-3">
+        <label for="hora" class="form-label">Hora</label>
+        {{form.hora}}
+      </div>
+      <div class="mb-3">
+        <label for="tipodemanda" class="form-label">Tipo Demanda</label>
+        {{form.tipodemanda}}
+      </div>      
+      
+    </div>
+    <div class="row">
+      Column
+    </div>
+    <div class="row">
+      Column
+    </div>
+  </div>
+  <div class="col">
+    <div class="mb-3">
+      <label for="tipodemanda" class="form-label">Tipo Demanda</label>
+      {{form.detalle}}
+    </div>
+  </div>
+  
+      <button type='submit'>Crear</button>
+  </form> {% endcomment %}
+  <div class="container d-flex justify-content-center mt-4" >
+  <form method="post" >
+    {% csrf_token %}
+    <h2>Detalle Nueva Demanda</h2>
+  <div class="container d-flex justify-content-center mt-4" >
+    
+    <div class="row">
+      <div class="col-sm">
+        <div class="mb-3">
+          <label for="id_demanda" class="form-label">ID Demanda</label>
+          {{form.id_demanda}}
+        </div>
+        <div class="mb-3">
+          <label for="fecha" class="form-label">Fecha</label>
+          {{form.fecha}}
+        </div>
+        <div class="mb-3">
+          <label for="hora" class="form-label">Hora</label>
+          {{form.hora}}
+        </div>
+        <div class="mb-3">
+          <label for="tipodemanda" class="form-label">Tipo Demanda</label>
+          {{form.tipodemanda}}
+        </div>            </div>
+      <div class="col-sm">
+        <div class="mb-3">
+          <label for="detalledemanda" class="form-label">Detalle Demanda</label>
+          {{form.detalle}}
+        </div>      
+      </div>
+    </div>
+  </div>
+  <div><h4>Demandado</h4></div>
+  <div class="container d-flex justify-content-center mt-4">
+    
+    
+    <div class="row">
+      <div class="col-sm">
+        <div class="col-sm">
+          <div class="mb-3">
+            <label for="rut1" class="form-label">Rut Demandado</label>
+            {{form.rut1}}
+          </div>
+          <div class="mb-3">
+            <label for="dv1" class="form-label">dv</label>
+            {{form.dv1}}
+          </div> 
+          <div class="mb-3">
+            <label for="nombre1" class="form-label">Nombre</label>
+            {{form.nombre1}}
+          </div> 
+          <div class="mb-3">
+            <label for="apellido1" class="form-label">Apellido</label>
+            {{form.apellido1}}
+          </div>       
+        </div>
+      </div>
+      <div class="col-sm d-flex justify-content-center mt-4">
+        <div class="mb-3">
+          <label for="telefono1" class="form-label">Telefono</label>
+          {{form.telefono1}}
+        </div>      
+        <div class="mb-3">
+          <label for="comuna1" class="form-label">Comuna</label>
+          {{form.comuna1}}
+        </div> 
+      </div>
+     
+    </div>
+  </div>
+  <div><h4>Demandante</h4></div>
+  <div class="container d-flex justify-content-center mt-4">
+
+    <div class="row">
+      <div class="col-sm">
+        <div class="col-sm">
+          <div class="mb-3">
+            <label for="rut2" class="form-label">Rut Demandado</label>
+            {{form.rut2}}
+          </div>
+          <div class="mb-3">
+            <label for="dv2" class="form-label">dv</label>
+            {{form.dv2}}
+          </div> 
+          <div class="mb-3">
+            <label for="nombre2" class="form-label">Nombre</label>
+            {{form.nombre2}}
+          </div> 
+          <div class="mb-3">
+            <label for="apellido2" class="form-label">Apellido</label>
+            {{form.apellido2}}
+          </div>       
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="mb-3">
+          <label for="telefono2" class="form-label">Telefono</label>
+          {{form.telefono2}}
+        </div>      
+        <div class="mb-3">
+          <label for="comuna2" class="form-label">Comuna</label>
+          {{form.comuna2}}
+        </div> 
+       </div>
+     
+    </div>
+     
+    </div>
+    <div class='d-flex justify-content-center mb-3'>
+    </div>
+  </div>
+  
+  </form>
+</div>
+</div>
+{% endblock %}

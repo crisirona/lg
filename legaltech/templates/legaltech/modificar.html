@@ -1,0 +1,10 @@
+{% extends 'legaltech/base.html' %}
+
+{% block content %}
+<div class='container'>
+    <h2>Modificar Id Caso {{caso.id_caso}}</h2>
+    <a class="btn btn-warning" href="{% url 'modificarcaso' caso.id_caso %}">Modificar</a>
+    <h2>Modificar Demanda {{demanda.id_demanda}}</h2>
+    <a class="btn btn-warning" href="{% url 'modificardemanda' caso.id_caso %}">Modificar</a>
+</div>
+{% endblock %}
