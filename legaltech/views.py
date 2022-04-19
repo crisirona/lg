@@ -161,7 +161,7 @@ def search(request):
     caso = Caso.objects.all()
     if busqueda:
         caso = Caso.objects.filter(
-            Q(id_demanda__icontains= busqueda)
+            Q(id_caso__icontains= busqueda)
         ).distinct()
         
     
