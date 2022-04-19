@@ -21,4 +21,9 @@ urlpatterns = [
     path('modificarcaso/<int:id>/',login_required(views.modificarCaso), name='modificarcaso'),
     path('modificardemanda/<int:id>/',login_required(views.modificarDemanda), name='modificardemanda'),
     path('search/',login_required(views.search),name='search'),
+
+
+
+
+    path('teststatic/',views.teststatic,name='teststatic'),
 ]

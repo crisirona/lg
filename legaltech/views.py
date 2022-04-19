@@ -170,3 +170,7 @@ def search(request):
         
     }
     return render(request,'legaltech/search.html',contexto)
+
+
+def teststatic(request):
+    return  render(request,'legaltech/teststatic.html')
