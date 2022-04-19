@@ -1,0 +1,20 @@
+
+{% extends 'legaltech/base.html' %}
+
+{% block content %}
+<div class="container d-flex justify-content-center mt-4">
+  
+  <div>
+        <h2>Iniciar Sesion</h2>
+        <form method="POST">
+    {% csrf_token %}
+    
+    <!-- form variable -->    
+     {{ form.as_p }} 
+    <div class="d-flex justify-content-center">
+        <button type="submit" name="sumbit" class="btn btn-success">Ingresar</button>
+    </div>
+    </form>
+</div>
+</div>
+{% endblock %}

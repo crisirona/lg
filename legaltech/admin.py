@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Caso,Demanda,Demandado,Demandante
+from .models import Caso,Demanda ,Tipodemanda,Comuna
 
 admin.site.register(Caso)
 admin.site.register(Demanda)
-admin.site.register(Demandado)
-admin.site.register(Demandante)
+admin.site.register(Comuna)
+admin.site.register(Tipodemanda)

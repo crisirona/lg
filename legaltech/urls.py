@@ -10,5 +10,8 @@ urlpatterns = [
     path('detalledemandado/',views.detalleDemandado,name='detalledemandado'),
     path('detalledemandante/',views.detalleDemandante,name='detalledemandante'),
     path('nuevademanda/',views.nuevaDemanda, name='nuevademanda'),
+    path('login/', views.AdminLogin.as_view(), name="login"),
+    path('logout/', views.AdminLogout.as_view(), name="logout"),
+    path('register/',views.register,name='register')
     
 ]

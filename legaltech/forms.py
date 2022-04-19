@@ -1,29 +1,33 @@
 from django import forms
-
-from .models import Caso, Demanda, Demandado,Demandante
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from .models import Caso, Demanda
 
 class CasoForm(forms.ModelForm):
 
     class Meta:
         model = Caso
-        fields = ('id_caso','author' )
+        fields = ('id_caso', )
 
 class DemandaForm(forms.ModelForm):
 
     class Meta:
         model = Demanda
-        fields = ('caso','id_demanda','author','fecha','hora','tipodemanda','detalle' )
+        fields = ('id_demanda','fecha','hora','tipodemanda','detalle',
+                    'rut1','dv1','nombre1','apellido1','telefono1','comuna1',
+                    'rut2','dv2','nombre2','apellido2','telefono2','comuna2')
 
-class DemandadoForm(forms.ModelForm):
 
-    class Meta:
-        model = Demandado
-        fields = ('rut','dv','nombre','apellido','telefono','demanda' )
+class NewUserForm(UserCreationForm):
+	email = forms.EmailField(required=True)
 
-class DemandanteForm(forms.ModelForm):
+	class Meta:
+		model = User
+		fields = ("username", "email", "password1", "password2")
 
-    class Meta:
-        model = Demandante
-        fields = ('rut','dv','nombre','apellido','telefono','demanda' )
-
-      
+	def save(self, commit=True):
+		user = super(NewUserForm, self).save(commit=False)
+		user.email = self.cleaned_data['email']
+		if commit:
+			user.save()
+		return user

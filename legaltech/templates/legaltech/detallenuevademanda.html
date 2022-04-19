@@ -1,67 +1,159 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>LegalTech</title>
-</head>
-<body>
-     <!-- A grey horizontal navbar that becomes vertical on small screens -->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+{% extends 'legaltech/base.html' %}
 
-    <div class="container-fluid">
-      <!-- Links -->
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown pr-4">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Demandas</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Abrir</a></li>
-              <li><a class="dropdown-item" href="{% url 'nuevademanda' %}">Nueva</a></li>
-              <li><a class="dropdown-item" href="#">Buscar</a></li>
-              <li><a class="dropdown-item" href="#">Eliminar</a></li>
-              <li><a class="dropdown-item" href="#">Ultima Demanda</a></li>
-              <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
-            </ul>
-        </li> 
-        <li class="nav-item dropdown pr-4">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Caso</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{% url 'nuevocaso' %}">Nuevo Caso</a></li>
-              <li><a class="dropdown-item" href="#">Another link</a></li>
-              <li><a class="dropdown-item" href="#">A third link</a></li>
-            </ul>
-        </li> 
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link 3</a>
-        </li>
-        <li class="nav-item dropdown pr-4">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Link</a></li>
-              <li><a class="dropdown-item" href="#">Another link</a></li>
-              <li><a class="dropdown-item" href="#">A third link</a></li>
-            </ul>
-        </li> 
-      </ul>
-    </div>
-  
-    </nav> 
-    <div class="mt-4 p-5 bg-secondary text-white rounded">
-  <h1>LegalTech</h1>
-  <p>Lorem ipsum...</p>
-</div>
+{% block content %}
 <div class="container">
-    <form method="post">
-        {% csrf_token %}
-        {{form}}
-        <button type='submit'>Crear</button>
-    </form>
+  {% comment %} <form method="post">
+    {% csrf_token %}
+  <div class="col">
+    <div class="row">
+      <div class="mb-3">
+        <label for="id_demanda" class="form-label">ID Demanda</label>
+        {{form.id_demanda}}
+      </div>
+      <div class="mb-3">
+        <label for="fecha" class="form-label">Fecha</label>
+        {{form.fecha}}
+      </div>
+      <div class="mb-3">
+        <label for="hora" class="form-label">Hora</label>
+        {{form.hora}}
+      </div>
+      <div class="mb-3">
+        <label for="tipodemanda" class="form-label">Tipo Demanda</label>
+        {{form.tipodemanda}}
+      </div>      
+      
+    </div>
+    <div class="row">
+      Column
+    </div>
+    <div class="row">
+      Column
+    </div>
+  </div>
+  <div class="col">
+    <div class="mb-3">
+      <label for="tipodemanda" class="form-label">Tipo Demanda</label>
+      {{form.detalle}}
+    </div>
+  </div>
+  
+      <button type='submit'>Crear</button>
+  </form> {% endcomment %}
+  <div class="container d-flex justify-content-center mt-4" >
+  <form method="post" >
+    {% csrf_token %}
+    <h2>Detalle Nueva Demanda</h2>
+  <div class="container d-flex justify-content-center mt-4" >
+    
+    <div class="row">
+      <div class="col-sm">
+        <div class="mb-3">
+          <label for="id_demanda" class="form-label">ID Demanda</label>
+          {{form.id_demanda}}
+        </div>
+        <div class="mb-3">
+          <label for="fecha" class="form-label">Fecha</label>
+          {{form.fecha}}
+        </div>
+        <div class="mb-3">
+          <label for="hora" class="form-label">Hora</label>
+          {{form.hora}}
+        </div>
+        <div class="mb-3">
+          <label for="tipodemanda" class="form-label">Tipo Demanda</label>
+          {{form.tipodemanda}}
+        </div>            </div>
+      <div class="col-sm">
+        <div class="mb-3">
+          <label for="detalledemanda" class="form-label">Detalle Demanda</label>
+          {{form.detalle}}
+        </div>      
+      </div>
+    </div>
+  </div>
+  <div><h4>Demandado</h4></div>
+  <div class="container d-flex justify-content-center mt-4">
+    
+    
+    <div class="row">
+      <div class="col-sm">
+        <div class="col-sm">
+          <div class="mb-3">
+            <label for="rut1" class="form-label">Rut Demandado</label>
+            {{form.rut1}}
+          </div>
+          <div class="mb-3">
+            <label for="dv1" class="form-label">dv</label>
+            {{form.dv1}}
+          </div> 
+          <div class="mb-3">
+            <label for="nombre1" class="form-label">Nombre</label>
+            {{form.nombre1}}
+          </div> 
+          <div class="mb-3">
+            <label for="apellido1" class="form-label">Apellido</label>
+            {{form.apellido1}}
+          </div>       
+        </div>
+      </div>
+      <div class="col-sm d-flex justify-content-center mt-4">
+        <div class="mb-3">
+          <label for="telefono1" class="form-label">Telefono</label>
+          {{form.telefono1}}
+        </div>      
+        <div class="mb-3">
+          <label for="comuna1" class="form-label">Comuna</label>
+          {{form.comuna1}}
+        </div> 
+      </div>
+     
+    </div>
+  </div>
+  <div><h4>Demandante</h4></div>
+  <div class="container d-flex justify-content-center mt-4">
+
+    <div class="row">
+      <div class="col-sm">
+        <div class="col-sm">
+          <div class="mb-3">
+            <label for="rut2" class="form-label">Rut Demandado</label>
+            {{form.rut2}}
+          </div>
+          <div class="mb-3">
+            <label for="dv2" class="form-label">dv</label>
+            {{form.dv2}}
+          </div> 
+          <div class="mb-3">
+            <label for="nombre2" class="form-label">Nombre</label>
+            {{form.nombre2}}
+          </div> 
+          <div class="mb-3">
+            <label for="apellido2" class="form-label">Apellido</label>
+            {{form.apellido2}}
+          </div>       
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="mb-3">
+          <label for="telefono2" class="form-label">Telefono</label>
+          {{form.telefono2}}
+        </div>      
+        <div class="mb-3">
+          <label for="comuna2" class="form-label">Comuna</label>
+          {{form.comuna2}}
+        </div> 
+       </div>
+     
+    </div>
+     
+    </div>
+    <div class='d-flex justify-content-center mb-3'>
+      <button type='submit' class="btn btn-success center-block" >Crear</button>
+    </div>
+  </div>
+  
+  </form>
 </div>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-</body>
-</html>
+</div>
+{% endblock %}
