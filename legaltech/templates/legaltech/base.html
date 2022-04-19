@@ -51,11 +51,14 @@
             <a class="nav-link" >{{ user.username }}</a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+            <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesion</a>
           </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'login' %}">Log Out</a>
+          <a class="nav-link" href="{% url 'login' %}">Iniciar Sesion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'register' %}">Registro</a>
         </li>
         {% endif %}
         
