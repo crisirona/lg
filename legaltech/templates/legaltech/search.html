@@ -20,6 +20,7 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Id</th>
+                <th scope="col">Abogado</th>
                 <th scope="col">Accion</th>
                 
               </tr>
@@ -29,6 +30,7 @@
               <tr>
                 <th scope="row">-</th>
                 <td>{{c.id_caso}}</td>
+                <td>{{c.id_caso.author}}</td>
                 <td><a href="{% url 'modificar' c.id_caso%}" class="btn btn-warning">Editar</a>
                     <a href="{% url 'eliminarconf' c.id_caso %}" class="btn btn-danger">Eliminar</a></td>
                </tr>

@@ -1,26 +1,25 @@
 {% extends 'legaltech/base.html' %}
 
 {% block content %}
-  {{casos}}
+  <div class='container'>
   <table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">ID Caso</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+       
       </tr>
     </thead>
     {% for c in casos %}
     <tbody>
       <tr>
-        <th scope="row">1</th>
+        <th scope="row"></th>
         <td>{{c.id_caso}}</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        
       </tr>
     </tbody>
     {% endfor %}
     
   </table>
+</div>
 {% endblock %}

@@ -164,6 +164,7 @@ def search(request):
             Q(id_caso__icontains= busqueda)
         ).distinct()
         
+        
     
     contexto={
         'caso':caso,
